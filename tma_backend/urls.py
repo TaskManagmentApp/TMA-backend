@@ -14,10 +14,15 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from django.http import JsonResponse
 from django.contrib import admin
 from django.urls import path, include
+# ✅ Simple home view function
+def home_view(request):
+    return JsonResponse({"message": "Welcome to Task Management API!"})
 
 urlpatterns = [
+    path('', home_view, name='home'),
     path('admin/', admin.site.urls),
     path('api/auth/', include('authentication.urls')),  # Properly include authentication URLs
     path('api/projects/', include('projects.urls')),    # ✅ Add This Line for Project Endpoints
