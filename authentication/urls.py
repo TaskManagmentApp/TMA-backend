@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import UserCreateView, UserListView, UserDetailView, UserUpdateView, UserDeleteView,UserLoginView
+from .views import UserCreateView,UserListView,UserDetailView,UserUpdateView,UserDeleteView,UserLoginView,LogoutView
 from rest_framework_simplejwt.views import TokenRefreshView
 
 urlpatterns = [
@@ -10,5 +10,7 @@ urlpatterns = [
     path("users/<int:pk>/", UserDetailView.as_view(), name="user-detail"),
     path("users/<int:pk>/update/", UserUpdateView.as_view(), name="user-update"),
     path("users/<int:pk>/delete/", UserDeleteView.as_view(), name="user-delete"),
+    path('logout/', LogoutView.as_view(), name='logout'),  # ✅ Add logout route
+
 
 ]

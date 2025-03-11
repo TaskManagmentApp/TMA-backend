@@ -119,3 +119,22 @@ class UserDeleteView(generics.DestroyAPIView):
         instance = self.get_object()
         self.perform_destroy(instance)
         return Response({"message": "User deleted successfully"}, status=status.HTTP_200_OK)
+
+
+#logout 
+class LogoutView(APIView):
+    permission_classes = [permissions.IsAuthenticated]
+
+    def post(self, request):
+        try:
+            refresh_token = request.data.get("refresh")
+            if not refresh_token:
+                return Response({"error": "Refresh token is required."}, status=status.HTTP_400_BAD_REQUEST)
+
+            # ✅ Blacklist the token (works only if blacklist app is enabled)
+            token = RefreshToken(refresh_token)
+            token.blacklist()
+
+            return Response({"message": "Logout successful."}, status=status.HTTP_205_RESET_CONTENT)
+        except Exception as e:
+            return Response({"error": str(e)}, status=status.HTTP_400_BAD_REQUEST)
