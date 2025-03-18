@@ -1,11 +1,14 @@
 # Tasks Management APIs
 
 ## Description
-A brief description of the project, including its purpose and functionality.
+This project provides a set of RESTful APIs for managing tasks efficiently. It allows users to create, update, delete, and retrieve tasks, supporting features like task prioritization, due dates, and status tracking.
 
 ## Features
-- List key features of the project.
-- Describe what makes it useful or unique.
+- Create, read, update, and delete (CRUD) tasks.
+- Assign priorities and due dates to tasks.
+- Mark tasks as completed or pending.
+- User authentication and authorization.
+- API documentation using Swagger/OpenAPI.
 
 ## Installation
 1. Clone the repository:
@@ -14,7 +17,7 @@ A brief description of the project, including its purpose and functionality.
    ```
 2. Navigate to the project directory:
    ```sh
-   cd yourproject
+   cd tasks-management-api
    ```
 3. Create a virtual environment (optional but recommended):
    ```sh
@@ -27,10 +30,16 @@ A brief description of the project, including its purpose and functionality.
    ```
 
 ## Usage
-Provide instructions on how to use the project, including example commands or usage scenarios.
+1. Start the API server:
+   ```sh
+   python app.py
+   ```
+2. Access the API endpoints using Postman or cURL.
+3. API documentation is available at `/docs` (if Swagger is enabled).
 
 ## Configuration
-Explain any necessary configuration settings, such as environment variables or configuration files.
+- Environment variables should be set in a `.env` file.
+- Database configuration should be updated in `config.py`.
 
 ## Contributing
 1. Fork the repository.
@@ -49,7 +58,8 @@ Explain any necessary configuration settings, such as environment variables or c
 5. Open a pull request.
 
 ## License
-Specify the project's license (e.g., MIT, Apache 2.0) and include a link to the LICENSE file.
+This project is licensed under the MIT License. See the LICENSE file for details.
 
 ## Contact
-Provide contact details for reporting issues or requesting features, such as an email or GitHub issues link.
+For any issues or feature requests, please open an issue on GitHub or contact [anees.ali.xca@gmail.com].
+
