@@ -32,7 +32,7 @@ This project provides a set of RESTful APIs for managing tasks efficiently. It a
 ## Usage
 1. Start the API server:
    ```sh
-   python app.py
+   python manage.py runserver 0.0.0.0:3000
    ```
 2. Access the API endpoints using Postman or cURL.
 3. API documentation is available at `/docs` (if Swagger is enabled).
